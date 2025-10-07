@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <title>
+        Test
+    </title>
+    <header>
+        LIFE EXPECTANCY DETERMINER
+    </header>
+
+    <button id="male" onclick="male()">Male</button>
+    <button>Female</button>
+    
+    <div></div>
+    <input type="radio" onclick="smoke()">Do you smoke?
+    <div></div>
+    <input type="radio" onclick ="drinks()">Do you drink?
+    <div>
+
+    </div>
+    <button onclick="show()">Show!</button>
+    <style>
+        header{
+            text-align: center;
+            cursor: default;
+            font-size: 30px;
+            color:rgb(8, 25, 8);
+            text-decoration: dotted;
+            
+        }button{
+            cursor: pointer;
+            padding: 18px;
+            
+            
+        }input{
+            cursor: pointer;
+            
+        }
+    </style>
+<script>
+    var min1 = 71.5; // Global variable
+    var max1 = 89.8;
+    let idk = 0;
+    let drink = 0;
+     
+    function smoke() {
+        idk = 1
+        min1 = 50.5; // Remove 'var' to modify the global variable
+        max1 = 67.4;
+    }
+    function drinks(){
+        drink = 1;
+        min1 = 40.3;
+        max1 = 60;
+        if(idk == 1){
+            min1 = 30.4;
+            max1 = 50.3;
+        }
+    }
+
+    function lifeM(min, max) {
+        return Math.random() * (max - min) + min;
+    }
+    function male() {
+      if(idk === 1){
+        max1 = 75.6;
+      }else{
+        max1 = 81.6;
+      }
+
+    }
+    function show(){
+          const randomFloat = lifeM(min1, max1);
+        document.getElementById("output").innerHTML = randomFloat.toFixed(2);
+    }
+</script>
+  <p>OUTPUT:  <p id="output"></p></p>
+</html>
